@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>👨🏻‍💻 Hazri Halimi | My Portfolio</title>
+
+<meta name="description"
+content="Portfolio website of Hazri Halimi Izhar Bin Harun">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* ===== ROOT ===== */
+
+:root{
+
+    --primary:#ffd60a;
+    --background:#0b0b0b;
+    --card:#161616;
+    --card-hover:#1d1d1d;
+    --text:#ffffff;
+    --text-secondary:#b5b5b5;
+    --border:rgba(255,255,255,0.08);
+
+}
+
+/* ===== GLOBAL ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Manrope',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(255,214,10,0.12),
+    transparent 30%),
+
+    radial-gradient(circle at bottom left,
+    rgba(255,214,10,0.06),
+    transparent 30%),
+
+    var(--background);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+    width:min(1150px,90%);
+    margin:auto;
+}
+
+/* ===== HEADER ===== */
+
+.site-header{
+
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+
+    backdrop-filter:blur(16px);
+
+    background:rgba(0,0,0,0.4);
+
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 0;
+}
+
+.brand{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-size:24px;
+    font-weight:800;
+}
+
+.site-nav{
+
+    display:flex;
+    gap:30px;
+}
+
+.site-nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.site-nav a:hover{
+
+    color:var(--primary);
+}
+
+/* ===== BUTTON ===== */
+
+.button{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:black;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:0.4s;
+}
+
+.button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 30px rgba(255,214,10,0.4);
+}
+
+.button-ghost{
+
+    background:transparent;
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    color:white;
+}
+
+.button-ghost:hover{
+
+    background:white;
+    color:black;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding-top:120px;
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1.2fr 0.8fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.eyebrow{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+
+    font-size:64px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.hero .lead{
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+.hero-actions{
+
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+/* ===== PROFILE ===== */
+
+.profile-panel{
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    backdrop-filter:blur(20px);
+
+    text-align:center;
+
+    transition:0.4s;
+
+    box-shadow:
+    0 0 40px rgba(255,214,10,0.08);
+}
+
+.profile-panel:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 50px rgba(255,214,10,0.18);
+}
+
+.profile-panel img{
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid var(--primary);
+
+    margin-bottom:25px;
+}
+
+.profile-panel h2{
+
+    margin-bottom:10px;
+}
+
+.profile-panel p{
+
+    color:var(--text-secondary);
+
+    margin-bottom:25px;
+}
+
+.contact-list{
+
+    list-style:none;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.contact-list a{
+
+    color:var(--text-secondary);
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.contact-list a:hover{
+
+    color:var(--primary);
+}
+
+/* ===== SECTION ===== */
+
+.section{
+
+    padding:100px 0;
+}
+
+.section h2{
+
+    font-size:40px;
+
+    margin-bottom:35px;
+
+    color:var(--primary);
+}
+
+/* ===== CARD ===== */
+
+.project-card,
+.experience-card,
+.skill-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    transition:0.4s;
+}
+
+.project-card:hover,
+.experience-card:hover,
+.skill-card:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--card-hover);
+
+    border-color:rgba(255,214,10,0.25);
+
+    box-shadow:
+    0 0 40px rgba(255,214,10,0.12);
+}
+
+/* ===== GRID ===== */
+
+.project-grid,
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+}
+
+/* ===== SKILLS ===== */
+
+.skill-card i{
+
+    font-size:45px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+}
+
+.skill-card h3{
+
+    margin-bottom:12px;
+}
+
+/* ===== LIST ===== */
+
+.stack-list,
+.detail-list{
+
+    margin-top:15px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+
+    color:var(--text-secondary);
+}
+
+.meta{
+
+    color:var(--primary);
+
+    margin:10px 0 20px;
+}
+
+/* ===== RESUME ===== */
+
+.resume-preview{
+
+    width:100%;
+
+    height:700px;
+
+    border:none;
+
+    border-radius:25px;
+
+    margin-top:30px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 30px rgba(255,214,10,0.15);
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer{
+
+    border-top:1px solid var(--border);
+
+    padding:30px 0;
+
+    text-align:center;
+
+    color:#888;
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:10px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+.hero-grid{
+
+    grid-template-columns:1fr;
+}
+
+.hero{
+
+    text-align:center;
+}
+
+.hero-actions{
+
+    justify-content:center;
+}
+
+.hero h1{
+
+    font-size:45px;
+}
+
+.site-nav{
+
+    display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+
+<header class="site-header">
+
+<div class="container header-inner">
+
+<a href="#" class="brand">
+MY PORTFOLIO
+</a>
+
+<nav class="site-nav">
+
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#resume">Resume</a>
+
+</nav>
+
+<a
+href="https://drive.google.com/file/d/1l_f6xGtUvQA1yJJwRH1eNVRtrJNF4DbB/view?usp=sharing"
+target="_blank"
+class="button">
+
+Download CV
+
+</a>
+
+</div>
+
+</header>
+
+<!-- ===== HERO ===== -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-copy">
+
+<p class="eyebrow">
+Computer Science Student 
+</p>
+
+<h1>
+HAZRI HALIMI <br>
+IZHAR BIN HARUN
+</h1>
+
+<p class="lead">
+
+Final year Computer Science student in Maritime Informatics
+from Universiti Malaysia Terengganu with strong passion for
+software development, web technologies, and system design.
+Currently seeking internship opportunities to gain industry
+experience and contribute to real-world software engineering projects.
+
+</p>
+
+<div class="hero-actions">
+
+<a href="#projects" class="button">
+View Projects
+</a>
+
+<a href="#resume" class="button button-ghost">
+Open Resume
+</a>
+
+</div>
+
+</div>
+
+<!-- ===== PROFILE ===== -->
+
+<aside class="profile-panel">
+
+<img src="Profile Picture.png" alt="image">
+
+<h2>
+Hazri Halimi
+</h2>
+
+<p>
+Computer Science Graduate
+</p>
+
+<ul class="contact-list">
+
+<li>
+<a href="#">
+hazzriey64halimiey@gmail.com
+</a>
+</li>
+
+<li>
+<a href="#">
++60 104197947
+</a>
+</li>
+
+<li>
+<a href="#">
+https://www.linkedin.com/in/hazzrieyhalimiey/
+</a>
+</li>
+
+<li>
+<a href="#">
+https://github.com/HazriHalimi
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+</div>
+
+</section>
+
+<!-- ===== ABOUT ===== -->
+
+<section id="about" class="section container">
+
+<h2>
+About Me
+</h2>
+
+<p class="lead">
+
+Fresh graduate in Computer Science with Maritime Informatics from
+Universiti Malaysia Terengganu with strong interest in software
+development, web technologies, and system design. Possesses
+hands-on experience in developing academic projects using Java,
+JSP, Servlet, HTML, CSS, and MySQL. A fast learner with good
+problem-solving, communication, and teamwork skills, seeking
+opportunities to contribute and grow in the software engineering
+industry.
+
+</p>
+
+</section>
+
+<!-- ===== SKILLS ===== -->
+
+<section id="skills" class="section container">
+
+<h2>
+Technical Skills
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<i class="fab fa-java"></i>
+<h3>Java</h3>
+<p>Object-oriented programming and application development.</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-database"></i>
+<h3>MySQL</h3>
+<p>Database design, CRUD operations and schema management.</p>
+</div>
+
+<div class="skill-card">
+<i class="fab fa-html5"></i>
+<h3>HTML & CSS</h3>
+<p>Responsive and modern frontend web development.</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-code"></i>
+<h3>JSP & Servlet</h3>
+<p>Dynamic Java web application development.</p>
+</div>
+
+<div class="skill-card">
+<i class="fab fa-github"></i>
+<h3>Git & GitHub</h3>
+<p>Version control and collaborative development workflow.</p>
+</div>
+
+<div class="skill-card">
+<i class="fas fa-laptop-code"></i>
+<h3>UI/UX Design</h3>
+<p>Modern interface design and user-centered experience.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== PROJECT ===== -->
+
+<section id="projects" class="section container">
+
+<h2>
+Projects
+</h2>
+
+<div class="project-grid">
+
+<!-- Flood Management -->
+
+<div class="project-card">
+
+<h3>
+Flood Management System
+</h3>
+
+<ul class="stack-list">
+
+<li>
+Developed flood evacuation and management system.
+</li>
+
+<li>
+Integrated water level monitoring features.
+</li>
+
+<li>
+Implemented station configuration management.
+</li>
+
+<li>
+Focused on improving emergency response efficiency.
+</li>
+
+</ul>
+
+</div>
+
+<!-- Weather IoT -->
+
+<div class="project-card">
+
+<h3>
+Mini Weather Station IoT Project
+</h3>
+
+<ul class="stack-list">
+
+<li>
+Developed an IoT-based weather monitoring system using Raspberry Pi Pico W.
+</li>
+
+<li>
+Integrated temperature, humidity, light, and ultrasonic sensors for real-time environmental data collection.
+</li>
+
+<li>
+Connected the system to ThingSpeak cloud platform for live monitoring and dashboard visualization.
+</li>
+
+<li>
+Implemented automated Wi-Fi data transmission for continuous remote access and analysis.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+
+<section id="experience" class="section container">
+
+<h2>
+Work Experience
+</h2>
+
+<div class="project-grid">
+
+<div class="experience-card">
+
+<h3>
+The Chicken Rice Shop — Crew Restaurant
+</h3>
+
+<p class="meta">
+January 2018 - May 2019 | Kuala Terengganu
+</p>
+
+<ul class="stack-list">
+
+<li>
+Prepared food and beverage services efficiently while maintaining good customer service.
+</li>
+
+<li>
+Presented menu items, handled customer orders, and provided suitable recommendations.
+</li>
+
+<li>
+Performed stock checking and restocking of returned products.
+</li>
+
+<li>
+Ensured customer orders were served accurately and on time.
+</li>
+
+</ul>
+
+</div>
+
+<div class="experience-card">
+
+<h3>
+Universiti Malaysia Terengganu — Intern Trainee
+</h3>
+
+<p class="meta">
+March 2022 - July 2022 | Kuala Terengganu
+</p>
+
+<p style="color:#ffd60a; margin-bottom:15px;">
+Pusat Ekosistem Digital
+</p>
+
+<ul class="stack-list">
+
+<li>
+Updated and developed Billboard System for Universiti Malaysia Terengganu.
+</li>
+
+<li>
+Built UMT website rankings similar to Wikipedia using Bootstrap framework.
+</li>
+
+<li>
+Produced video recordings for UMT MOOC e-learning platform.
+</li>
+
+<li>
+Managed updates for over 100 university websites.
+</li>
+
+<li>
+Prepared reports and spreadsheets for management monitoring.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== EDUCATION ===== -->
+
+<section id="education" class="section container">
+
+<h2>
+Education
+</h2>
+
+<div class="project-grid">
+
+<div class="experience-card">
+
+<h3>
+Universiti Malaysia Terengganu
+</h3>
+
+<p class="meta">
+2023 - Present
+</p>
+
+<p>
+Bachelor Degree in Computer Science
+(Maritime Informatics)
+</p>
+
+</div>
+
+<div class="experience-card">
+
+<h3>
+Politeknik Kuala Terengganu
+</h3>
+
+<p class="meta">
+2019 - 2021
+</p>
+
+<p>
+Diploma in Information Technology
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== RESUME ===== -->
+
+<section id="resume" class="section container">
+
+<h2>
+Resume
+</h2>
+
+<p class="lead">
+You can preview and download my resume below.
+</p>
+
+<iframe
+class="resume-preview"
+src="https://drive.google.com/file/d/1l_f6xGtUvQA1yJJwRH1eNVRtrJNF4DbB/preview">
+</iframe>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+
+<footer class="site-footer">
+
+<div class="container">
+
+<p>
+© 2026 Hazri Halimi | My Portfolio
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
